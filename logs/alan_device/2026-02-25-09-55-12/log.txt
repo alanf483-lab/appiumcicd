@@ -1,0 +1,35 @@
+39:alan_device:com.qa.base.BaseTest:VIDEO STARTS RECORDING
+39:alan_device:com.qa.test.LoginTests:
+****** starting test:invalidPassword *******
+
+39:alan_device:com.qa.pages.LoginPage:The username is: standard_user
+39:alan_device:com.qa.pages.LoginPage:The password is: invalid_password
+39:alan_device:com.qa.pages.LoginPage:Press login btn
+39:alan_device:com.qa.pages.LoginPage:The error text is:Username and password do not match any user in this service.
+39:alan_device:com.qa.test.LoginTests:Actual error Text: Username and password do not match any user in this service.
+Expected error TextUsername and password do not match any user in this service.
+39:alan_device:com.qa.base.BaseTest:VIDEO STOPS RECORDING
+39:alan_device:com.qa.base.BaseTest:VIDEO STARTS RECORDING
+39:alan_device:com.qa.test.LoginTests:
+****** starting test:invalidUserName *******
+
+39:alan_device:com.qa.pages.LoginPage:The username is: invalidUsername
+39:alan_device:com.qa.pages.LoginPage:The password is: secret_sauce
+39:alan_device:com.qa.pages.LoginPage:The username is: invalidUsername
+39:alan_device:com.qa.pages.LoginPage:Press login btn
+39:alan_device:com.qa.pages.LoginPage:The error text is:Username and password do not match any user in this service.
+39:alan_device:com.qa.test.LoginTests:Actual error Text: Username and password do not match any user in this service.
+Expected error TextUsername and password do not match any user in this service.
+39:alan_device:com.qa.base.BaseTest:VIDEO STOPS RECORDING
+39:alan_device:com.qa.base.BaseTest:VIDEO STARTS RECORDING
+39:alan_device:com.qa.test.LoginTests:
+****** starting test:successfulLogin *******
+
+39:alan_device:com.qa.pages.LoginPage:The username is: standard_user
+39:alan_device:com.qa.pages.LoginPage:The password is: secret_sauce
+39:alan_device:com.qa.pages.LoginPage:Press login btn
+39:alan_device:com.qa.pages.ProductsPage:Product page title is: PRODUCTS
+39:alan_device:com.qa.test.LoginTests:Actual product title: PRODUCTS
+Expected product titlePRODUCTS
+39:alan_device:com.qa.pages.SettingsPage:Press Settings Btn
+39:alan_device:com.qa.base.BaseTest:VIDEO STOPS RECORDING

@@ -1,0 +1,19 @@
+{
+  "invalidUser": {
+    "username": "invalidUsername",
+    "password": "secret_sauce"
+  },
+  "invalidPassword": {
+    "username": "standard_user",
+    "password": "invalid_password"
+  },
+  "validUser": {
+    "username": "standard_user",
+    "password": "secret_sauce"
+  },
+  "UserData": {
+    "firtName": "Alan",
+    "lastName": "Flores",
+    "postalCode": "77990"
+  }
+}

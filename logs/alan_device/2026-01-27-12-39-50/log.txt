@@ -1,0 +1,34 @@
+31:alan_device:com.qa.base.BaseTest:VIDEO STARTS RECORDING
+31:alan_device:com.qa.test.LoginTests:
+****** starting test:invalidPassword *******
+
+31:alan_device:com.qa.pages.LoginPage:The username is: standard_user
+31:alan_device:com.qa.pages.LoginPage:The password is: invalid_password
+31:alan_device:com.qa.pages.LoginPage:Press login btn
+31:alan_device:com.qa.pages.LoginPage:The error text is:Username and password do not match any user in this service.
+31:alan_device:com.qa.test.LoginTests:Actual error Text: Username and password do not match any user in this service.
+Expected error TextUsername and password do not match any user in this service.
+31:alan_device:com.qa.base.BaseTest:VIDEO STOPS RECORDING
+31:alan_device:com.qa.base.BaseTest:VIDEO STARTS RECORDING
+31:alan_device:com.qa.test.LoginTests:
+****** starting test:invalidUserName *******
+
+31:alan_device:com.qa.pages.LoginPage:The username is: invalidUsername
+31:alan_device:com.qa.pages.LoginPage:The password is: secret_sauce
+31:alan_device:com.qa.pages.LoginPage:Press login btn
+31:alan_device:com.qa.pages.LoginPage:The error text is:Username and password do not match any user in this service.
+31:alan_device:com.qa.test.LoginTests:Actual error Text: Username and password do not match any user in this service.
+Expected error TextUsername and password do not match any user in this service.
+31:alan_device:com.qa.base.BaseTest:VIDEO STOPS RECORDING
+31:alan_device:com.qa.base.BaseTest:VIDEO STARTS RECORDING
+31:alan_device:com.qa.test.LoginTests:
+****** starting test:successfulLogin *******
+
+31:alan_device:com.qa.pages.LoginPage:The username is: standard_user
+31:alan_device:com.qa.pages.LoginPage:The password is: secret_sauce
+31:alan_device:com.qa.pages.LoginPage:Press login btn
+31:alan_device:com.qa.pages.ProductsPage:Product page title is: PRODUCTS
+31:alan_device:com.qa.test.LoginTests:Actual product title: PRODUCTS
+Expected product titlePRODUCTS
+31:alan_device:com.qa.pages.SettingsPage:Press Settings Btn
+31:alan_device:com.qa.base.BaseTest:VIDEO STOPS RECORDING

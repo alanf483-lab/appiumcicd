@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <!--Error Text -->
+    <string name="err_invalid_username_or_password">Username and password do not match any user in this service.</string>
+    <string name="product_title">PRODUCTS</string>
+
+    <!-->Products Page<-->
+    <string name="products_page_slb_title">Sauce Labs Backpack</string>
+    <string name="products_page_slb_price">$29.99</string>
+
+    <!-->Product Detail Page<-->
+    <string name="product_detail_page_slb_title">Sauce Labs Backpack</string>
+    <string name="product_detail_page_slb_detail">carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.</string>
+    <string name="product_detail_page_slb_price">$29.99</string>
+
+    <!--Cart Page    -->
+    <string name="cart_page_pay_info">SauceCard #31337</string>
+    <string name="cart_page_pay_shipping">FREE PONY EXPRESS DELIVERY!</string>
+    <string name="cart_page_total_price">Total: $32.39</string>
+
+</resources>

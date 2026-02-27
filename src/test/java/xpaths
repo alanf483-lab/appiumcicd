@@ -1,0 +1,5 @@
+WebElement usernameTxtFld = driver.findElement(AppiumBy.accessibilityId("test-Username"));
+WebElement passwordTxtFld = driver.findElement(AppiumBy.accessibilityId("test-Password"));
+WebElement loginBtn = driver.findElement(AppiumBy.accessibilityId("test-LOGIN"));
+WebElement errorTxt = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Username and password do not match any user in this service.\"]"));
+WebElement ProductsTitleTxt = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"PRODUCTS\"]"));
