@@ -70,7 +70,7 @@ public class CartTest extends BaseTest {
         launchApp();
     }
 
-    @Test
+//    @Test
 //    public void validateBuyingAProducto() throws InterruptedException {
 //        SoftAssert sa = new SoftAssert();
 //
