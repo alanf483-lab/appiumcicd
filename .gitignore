@@ -3,6 +3,13 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+### Project specific files ###
+logs/
+Screenshot/
+Videos/
+test-output/
+*.log
+
 ### IntelliJ IDEA ###
 .idea/modules.xml
 .idea/jarRepositories.xml
