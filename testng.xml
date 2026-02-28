@@ -11,6 +11,8 @@
             <parameter name="chromeDriverPort" value="11000"/>
             <classes>
                 <class name="com.qa.test.LoginTests"></class>
+                <class name="com.qa.test.ProductsTest"></class>
+                <class name="com.qa.test.CartTest"></class>
             </classes>
         </test>
         <test name="Pixel 7">
@@ -24,6 +26,8 @@
             <parameter name="chromeDriverPort" value="11002"/>
         <classes>
             <class name="com.qa.test.LoginTests"></class>
+            <class name="com.qa.test.ProductsTest"></class>
+            <class name="com.qa.test.CartTest"></class>
         </classes>
         </test>
 </suite>

@@ -58,6 +58,7 @@ public class ProductsTest extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod(Method m){
+        launchApp();
         loginPage = new LoginPage();
         utils.log("\n" + "****** starting test:" + m.getName() + " *******" + "\n");
 
@@ -68,7 +69,7 @@ public class ProductsTest extends BaseTest {
     @AfterMethod
     public void afterMethod(){
         closeApp();
-        launchApp();
+
     }
 
     @Test

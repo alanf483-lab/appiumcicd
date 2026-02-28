@@ -14,6 +14,7 @@ public class CartPage extends ProductsPage {
     @AndroidFindBy (xpath = "//android.widget.EditText[@content-desc=\"test-Zip/Postal Code\"]") private WebElement postalCodeBox;
     @AndroidFindBy (xpath = "//android.view.ViewGroup[@content-desc=\"test-CONTINUE\"]") private WebElement continueBtn;
     @AndroidFindBy (xpath = "//android.view.ViewGroup[@content-desc=\"test-FINISH\"]") private WebElement finishBtn;
+    @AndroidFindBy (xpath = "//android.widget.TextView[@text=\"FINISH\"]") private WebElement finishBtn2;
     @AndroidFindBy (xpath = "//android.widget.TextView[@text=\"THANK YOU FOR YOU ORDER\"]") private WebElement successMsg;
 
 
@@ -62,6 +63,12 @@ public class CartPage extends ProductsPage {
         String title = getAttribute(successMsg, "text");
         utils.log("The final msg is: " + title);
         return getAttribute(successMsg, "text");
+    }
+
+    public CartPage scrollToFinish(){
+        utils.log("Se realiza scroll");
+        scrollToElementTest("checkoutOverviewPage", "test-FINISH");
+        return this;
     }
 
 
