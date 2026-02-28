@@ -225,9 +225,6 @@ public class BaseTest {
         }
         return e;
     }
-
-
-
     // Scroll to element checkout overview page
     public WebElement scrollToElement(String contentDescription) {
         return getDriver().findElement(AppiumBy.androidUIAutomator(
