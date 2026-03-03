@@ -278,7 +278,7 @@ public class BaseTest {
 //                        "speed", 2500
 //                )
 //        );
-//    }
+//    } Esto es un cambio
 
     public void sendKeys(WebElement e, String txt){
         waitForVisibility(e);
