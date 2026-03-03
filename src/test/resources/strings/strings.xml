@@ -17,5 +17,7 @@
     <string name="cart_page_pay_info">SauceCard #31337</string>
     <string name="cart_page_pay_shipping">FREE PONY EXPRESS DELIVERY!</string>
     <string name="cart_page_total_price">Total: $32.39</string>
+    <string name="cart_page_final_msg">THANK YOU FOR YOU ORDER</string>
+
 
 </resources>

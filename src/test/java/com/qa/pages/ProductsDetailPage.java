@@ -47,11 +47,11 @@ public class ProductsDetailPage extends MenuPage {
         return btnText;
     }
 
-    public ProductsDetailPage scrollToSLBPrice(){
-        utils.log("Se realiza Scroll");
-        scrollToElement();
-        return this;
-    }
+//    public ProductsDetailPage scrollToSLBPrice(){
+//        utils.log("Se realiza Scroll");
+//        scrollToElement();
+//        return this;
+//    }
 
     public ProductsDetailPage scrollToAddToCartBtn(){
         utils.log("Se realiza scroll nuevo");

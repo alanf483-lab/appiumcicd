@@ -205,22 +205,77 @@ public class BaseTest {
         e.click();
     }
 
-    public WebElement scrollToElement() {
+    // Scroll to element product detail page
+    //No importa si el elemento no
+    public WebElement scrollToElementTest(String scrollPage, String contentDescription) {
+        WebElement e = null;
+        switch (scrollPage) {
+            case "productDetailPage":
+                e = getDriver().findElement(AppiumBy.androidUIAutomator(
+                        "new UiScrollable(new UiSelector().description(\"test-Inventory item page\"))" +
+                                ".scrollIntoView(new UiSelector().description(\"" + contentDescription + "\"))"));
+                break;
+            case "checkoutOverviewPage":
+                e = getDriver().findElement(AppiumBy.androidUIAutomator(
+                        "new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\"))" +
+                                ".scrollIntoView(new UiSelector().description(\"" + contentDescription + "\"))"));
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid scroll page: " + scrollPage);
+        }
+        return e;
+    }
+    // Scroll to element checkout overview page
+    public WebElement scrollToElement(String contentDescription) {
         return getDriver().findElement(AppiumBy.androidUIAutomator(
-                "new UiScrollable(new UiSelector().description(\"test-Inventory item page\"))" +
-                        ".scrollIntoView(new UiSelector().description(\"e\"))"));
+                "new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\"))" +
+                        ".scrollIntoView(new UiSelector().description(\"" + contentDescription + "\"))"));
     }
 
-    public void scrollToElement2(WebElement e, String direction){
-        boolean canScrollMore = (boolean) getDriver().executeScript(
-                "mobile: scrollGesture", ImmutableMap.of(
-                        "elementId", ((RemoteWebElement)e).getId(),
-                        "direction", direction,
-                        "percent", 1.0,
-                        "speed", 2500
-                )
-        );
+
+    // Scroll to element by content-description (parametrizado)
+    public WebElement scrollToElementByParam(String scrollablePage,String contentDescription) {
+       return getDriver().findElement(AppiumBy.androidUIAutomator(
+                "new UiScrollable(new UiSelector().description(\"" + scrollablePage + "\"))" +
+                        ".scrollIntoView(new UiSelector().description(\"" + contentDescription + "\"))"));
     }
+
+    // Scroll to element by text visible
+    public WebElement scrollToElementByText(String text) {
+        return getDriver().findElement(AppiumBy.androidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true))" +
+                        ".scrollIntoView(new UiSelector().text(\"" + text + "\"))"));
+    }
+
+    // Scroll to element by partial text (contains)
+    public WebElement scrollToElementContainingText(String partialText) {
+        return getDriver().findElement(AppiumBy.androidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true))" +
+                        ".scrollIntoView(new UiSelector().textContains(\"" + partialText + "\"))"));
+    }
+
+    // Scroll to end of list
+    public void scrollToEnd() {
+        getDriver().findElement(AppiumBy.androidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true)).scrollToEnd(10)"));
+    }
+
+    // Scroll to beginning of list
+    public void scrollToBeginning() {
+        getDriver().findElement(AppiumBy.androidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true)).scrollToBeginning(10)"));
+    }
+
+//    public void scrollToElement2(WebElement e, String direction){
+//        boolean canScrollMore = (boolean) getDriver().executeScript(
+//                "mobile: scrollGesture", ImmutableMap.of(
+//                        "elementId", ((RemoteWebElement)e).getId(),
+//                        "direction", direction,
+//                        "percent", 1.0,
+//                        "speed", 2500
+//                )
+//        );
+//    }
 
     public void sendKeys(WebElement e, String txt){
         waitForVisibility(e);

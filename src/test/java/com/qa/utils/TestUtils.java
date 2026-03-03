@@ -19,6 +19,9 @@ import java.util.HashMap;
 public class TestUtils {
     public static final long WAIT = 20;
 
+//    public static final String DESCRIPTION_PAGE = "test-Inventory item page";
+//    public static final String CHECKOUT_PAGE = "test-CHECKOUT: OVERVIEW";
+
     public HashMap<String, String> parseStringXML(InputStream file) throws Exception {
         HashMap<String, String> stringMap = new HashMap<String, String>();
         //Get Document Builder

@@ -21,13 +21,10 @@ public class CartTest extends BaseTest {
     LoginPage loginPage;
     ProductsPage productsPage;
     CartPage cartPage;
-    SettingsPage settingsPage, settingsPage2;
-    ProductsDetailPage productDetailPage;
     InputStream datais;
     JSONObject loginUsers;
 
     TestUtils utils = new TestUtils();
-
 
     @BeforeClass
     public void beforeClass() throws IOException {
@@ -46,8 +43,6 @@ public class CartTest extends BaseTest {
             }
         }
 
-
-
     }
     @AfterClass
     public void afterClass(){
@@ -56,6 +51,7 @@ public class CartTest extends BaseTest {
 
     @BeforeMethod
     public void beforeMethod(Method m){
+        launchApp();
         loginPage = new LoginPage();
         utils.log("\n" + "****** starting test:" + m.getName() + " *******" + "\n");
 
@@ -67,7 +63,6 @@ public class CartTest extends BaseTest {
     @AfterMethod
     public void afterMethod(){
         closeApp();
-        launchApp();
     }
 
 //    @Test
@@ -93,35 +88,32 @@ public class CartTest extends BaseTest {
     public void validateBuyingAProduct() throws InterruptedException {
         SoftAssert sa = new SoftAssert();
 
-        //Se entra a la descripcion del producto
-        productDetailPage = productsPage.pressSLBTitle();
+        //Se da click al producto para agregar al carrito:
+        productsPage.addBackpackToCart();
 
-        //Se valida el title actual con el title esperado
-        String SLBTitle = productDetailPage.getSLBTitle();
-        sa.assertEquals(SLBTitle, getStrings().get("product_detail_page_slb_title"));
+        //Se da click al boton del carrito y se envia al flujo de carrito
+        cartPage = productsPage.pressCartBtn();
 
-        //Se valida la descripcion del producto
-        String SLBDetail = productDetailPage.getSLBDetail();
-        sa.assertEquals(SLBDetail, getStrings().get("product_detail_page_slb_detail"));
+        //Se da click al boton de checkout para iniciar el proceso de compra
+        cartPage.pressCheckoutBtn();
 
-        //Se realiza scroll
-        productDetailPage.scrollToAddToCartBtn();
+        //Se coloca info de usuario en el formulario
+        cartPage.setFirstName(loginUsers.getJSONObject("UserData").getString("firstName"));
+        cartPage.setLastName(loginUsers.getJSONObject("UserData").getString("lastName"));
+        cartPage.setPostalCode(loginUsers.getJSONObject("UserData").getString("postalCode"));
 
-        String btnAddToCart = productDetailPage.getAddToCartTxt();
+        //Se hace scroll al btn y se presiona
+        cartPage.pressContinueBtn();
 
-        //Se valida el precio actual del producto
-        String SLBPrice = productDetailPage.getSLBPrice();
-        sa.assertEquals(SLBPrice, getStrings().get("product_detail_page_slb_price"));
+        //Se presiona boton de finish para finalizar la compra
+        cartPage.scrollToFinish().pressFinishBtn();
 
+        //Se valida si el mensaje final de compra es el esperado
+        String finalMsg = cartPage.getFinalMsg();
+        sa.assertEquals(finalMsg, getStrings().get("cart_page_final_msg"));
 
-        //Se regresa a la pantalla de productos
-        productsPage = productDetailPage.pressBackToProductsBtn();
-
-        //Se desplega el menu de Settings
-        //Thread.sleep(1000);
-        //settingsPage= productsPage.pressSettingbtn();
-        //loginPage = settingsPage.pressLogoutBtn();
-
+        //esto sirve para validar todos los assert y que no se detenga el flujo al encontrar un error,
+        // ademas de mostrar todos los errores encontrados al finalizar el test
         sa.assertAll();
     }
 }

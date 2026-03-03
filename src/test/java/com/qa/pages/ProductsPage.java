@@ -43,9 +43,8 @@ public class ProductsPage extends MenuPage {
         return new ProductsDetailPage();
     }
 
-    public ProductsPage addBackpackToCart(){
+    public void addBackpackToCart(){
         utils.log("Backpack is added to cart");
         click(addToCartBtn);
-        return this;
     }
 }
