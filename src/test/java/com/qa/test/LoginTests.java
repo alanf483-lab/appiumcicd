@@ -6,6 +6,8 @@ import com.qa.pages.ProductsPage;
 import com.qa.pages.SettingsPage;
 import com.qa.utils.TestUtils;
 import io.appium.java_client.AppiumBy;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.openqa.selenium.WebElement;
@@ -26,6 +28,7 @@ public class LoginTests extends BaseTest{
 
     JSONObject loginUsers;
     SettingsPage settingsPage;
+    static Logger log = LogManager.getLogger(LoginTests.class.getName());
 
     @BeforeClass
     public void beforeClass() throws IOException {
@@ -56,8 +59,8 @@ public class LoginTests extends BaseTest{
     @BeforeMethod
     public void beforeMethod(Method m){
         loginPage = new LoginPage();
-        utils.log("\n" + "****** starting test:" + m.getName() + " *******" + "\n");
-
+        //utils.log("\n" + "****** starting test:" + m.getName() + " *******" + "\n");
+        log.info("\n" + "****** starting test:" + m.getName() + " *******" + "\n");
         launchApp();
     }
 
@@ -70,11 +73,11 @@ public class LoginTests extends BaseTest{
     public void invalidUserName(){
             loginPage.enterUserName(loginUsers.getJSONObject("invalidUser").getString("username"));
             loginPage.enterPassword(loginUsers.getJSONObject("invalidUser").getString("password"));
-            loginPage.enterUserName(loginUsers.getJSONObject("invalidUser").getString("username"));
-
             loginPage.pressLoginBtn();
 
+
             String actualErrorTxt = loginPage.getErrorTxt();
+            log.info("Validando assert:");
             String expectedErrorTxt = getStrings().get("err_invalid_username_or_password");
             utils.log("Actual error Text: " + actualErrorTxt + "\n" + "Expected error Text" + expectedErrorTxt);
 

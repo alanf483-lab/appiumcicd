@@ -34,7 +34,7 @@ public class BaseTest {
     protected static ThreadLocal <HashMap<String, String>> strings = new ThreadLocal <HashMap<String, String>>();
     protected static ThreadLocal <String> dateTime = new ThreadLocal<String>();
     protected static ThreadLocal <String> deviceName =  new ThreadLocal<String>();
-    static Logger log = LogManager.getLogger(BaseTest.class.getName());
+
 
     TestUtils utils = new TestUtils();;
 
@@ -87,13 +87,13 @@ public class BaseTest {
 
     @BeforeMethod
     public void beforeMethod(){
-        utils.log("VIDEO STARTS RECORDING");
+        utils.log().info("VIDEO STARTS RECORDING");
         ((CanRecordScreen) getDriver()).startRecordingScreen();
     }
 
     @AfterMethod
     public synchronized void afterMethod(ITestResult result){
-        utils.log("VIDEO STOPS RECORDING");
+        utils.log().info("VIDEO STOPS RECORDING");
         String media = ((CanRecordScreen) getDriver()).stopRecordingScreen();
 
         //Esta condicion nos permitira hacer la grabacion solo si el test case falla
@@ -126,12 +126,7 @@ public class BaseTest {
     @BeforeTest
     public void beforeTest(String platformName, String udid, @Optional("androidOnly")String deviceName, @Optional("androidOnly")int systemPort, @Optional("androidOnly")int chromeDriverPort) throws Exception{
 
-       //Este bloque de logs es para verificar que el log4j esta funcionando correctamente, luego se puede eliminar
-
-       log.info("This is info message");
-       log.error("This is error message");
-       log.debug("This is debug message");
-       log.warn("This is warning message");
+       //Este bloque de logs es para verificar que el log4j esta funcionando correctamente, luego se puede elimina
 
        setDateTime(utils.getDateTime()); //Asignamos la fecha traida desde utils y la colocamos en dateTime de BaseTest
         setDeviceName(deviceName);
@@ -158,7 +153,9 @@ public class BaseTest {
 
             String appUrl = System.getProperty("user.dir") + File.separator +
                     "src" + File.separator +
-                    "apps" + File.separator +
+                    "test" + File.separator +
+                    "resources" + File.separator +
+                    "app" + File.separator +
                     "swagLabs.apk";
 
             UiAutomator2Options caps = new UiAutomator2Options();
@@ -173,9 +170,9 @@ public class BaseTest {
             caps.setAppPackage(props.getProperty("androidAppPackage"));
             caps.setAppActivity(props.getProperty("androidAppActivity"));
 
-            //caps.setAvd(deviceName);
+            caps.setAvd(deviceName);
             //String AndroidAppURL = getClass().getResource(props.getProperty("androidAppLocation")).getFile();
-            //caps.setApp(appURL);
+            caps.setApp(appUrl);
             caps.setAvdLaunchTimeout(Duration.ofSeconds(180000));
             URL url = new URL(props.getProperty("appiumURL"));
 
@@ -226,15 +223,12 @@ public class BaseTest {
         return e;
     }
 
-
-
     // Scroll to element checkout overview page
     public WebElement scrollToElement(String contentDescription) {
         return getDriver().findElement(AppiumBy.androidUIAutomator(
                 "new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\"))" +
                         ".scrollIntoView(new UiSelector().description(\"" + contentDescription + "\"))"));
     }
-
 
     // Scroll to element by content-description (parametrizado)
     public WebElement scrollToElementByParam(String scrollablePage,String contentDescription) {
@@ -268,17 +262,6 @@ public class BaseTest {
         getDriver().findElement(AppiumBy.androidUIAutomator(
                 "new UiScrollable(new UiSelector().scrollable(true)).scrollToBeginning(10)"));
     }
-
-//    public void scrollToElement2(WebElement e, String direction){
-//        boolean canScrollMore = (boolean) getDriver().executeScript(
-//                "mobile: scrollGesture", ImmutableMap.of(
-//                        "elementId", ((RemoteWebElement)e).getId(),
-//                        "direction", direction,
-//                        "percent", 1.0,
-//                        "speed", 2500
-//                )
-//        );
-//    } Esto es un cambio
 
     public void sendKeys(WebElement e, String txt){
         waitForVisibility(e);

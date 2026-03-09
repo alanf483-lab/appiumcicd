@@ -24,49 +24,49 @@ public class CartPage extends ProductsPage {
     }
 
     public CartPage pressCheckoutBtn(){
-        utils.log("Checkout button is clicked");
+        utils.log().info("Checkout button is clicked");
         click(checkoutBtn);
         return this;
     }
 
     public CartPage setFirstName(String firstName){
-        utils.log("First name is set to: " + firstName);
+        utils.log().info("First name is set to: " + firstName);
         sendKeys(firstNameBox, firstName);
         return this;
     }
 
     public CartPage setLastName(String lastName){
-        utils.log("First name is set to: " + lastName);
+        utils.log().info("Last name is set to: " + lastName);
         sendKeys(lastNameBox, lastName);
         return this;
     }
 
     public CartPage setPostalCode(String postalCode){
-        utils.log("First name is set to: " + postalCode);
+        utils.log().info("postal code set to: " + postalCode);
         sendKeys(postalCodeBox, postalCode);
         return this;
     }
 
     public CartPage pressContinueBtn(){
-        utils.log("Continue button is clicked");
+        utils.log().info("Continue button is clicked");
         click(continueBtn);
         return this;
     }
 
     public CartPage pressFinishBtn(){
-        utils.log("Finish button is clicked");
+        utils.log().info("Finish button is clicked");
         click(finishBtn);
         return this;
     }
 
     public String getFinalMsg(){
         String title = getAttribute(successMsg, "text");
-        utils.log("The final msg is: " + title);
+        utils.log().info("The final msg is: " + title);
         return getAttribute(successMsg, "text");
     }
 
     public CartPage scrollToFinish(){
-        utils.log("Se realiza scroll");
+        utils.log().info("Se realiza scroll");
         scrollToElementTest("checkoutOverviewPage", "test-FINISH");
         return this;
     }

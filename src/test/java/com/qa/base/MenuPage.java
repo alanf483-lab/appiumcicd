@@ -12,6 +12,7 @@ public class MenuPage extends BaseTest{
 
 
     public SettingsPage pressSettingbtn(){
+        utils.log().info("Pressing settings button");
         click(settingsBtn);
         return new SettingsPage();
         /*Se retorna settingsPage ya que al presionar el btn de settings la siguiente pantalla
@@ -21,7 +22,7 @@ public class MenuPage extends BaseTest{
     }
 
     public CartPage pressCartBtn(){
-        utils.log("Cart button is clicked");
+        utils.log().info("Cart button is clicked");
         click(cartBtn);
         return new CartPage();
     }
