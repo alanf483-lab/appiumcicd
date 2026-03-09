@@ -225,6 +225,9 @@ public class BaseTest {
         }
         return e;
     }
+
+
+
     // Scroll to element checkout overview page
     public WebElement scrollToElement(String contentDescription) {
         return getDriver().findElement(AppiumBy.androidUIAutomator(
@@ -275,7 +278,7 @@ public class BaseTest {
 //                        "speed", 2500
 //                )
 //        );
-//    }
+//    } Esto es un cambio
 
     public void sendKeys(WebElement e, String txt){
         waitForVisibility(e);

@@ -17,7 +17,7 @@ public class SettingsPage extends BaseTest {
     }
 
     public LoginPage pressLogoutBtn(){
-        utils.log("Press Settings Btn");
+        utils.log().info("Press Settings Btn");
         click(logoutBtn);
         return new LoginPage();
         /*Se retorna settingsPage ya que al presionar el btn de settings la siguiente pantalla

@@ -25,19 +25,19 @@ public class LoginPage extends BaseTest {
     //WebElement errorTxt = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Username and password do not match any user in this service.\"]"));
 
     public LoginPage enterUserName(String username){
-        utils.log("The username is: " + username);
+        utils.log().info("The username is: " + username);
         sendKeys(usernameTxtFld, username);
         return this;
     }
 
     public LoginPage enterPassword(String password){
-        utils.log("The password is: " + password);
+        utils.log().info("The password is: " + password);
         sendKeys(passwordTxtFld, password);
         return this;
     }
 
     public ProductsPage pressLoginBtn(){
-        utils.log("Press login btn");
+        utils.log().info("Press login btn");
         click(loginBtn);
         return new ProductsPage();
     }
@@ -50,7 +50,7 @@ public class LoginPage extends BaseTest {
     }
 
     public String getErrorTxt(){
-        utils.log("The error text is:" + getAttribute(errorTxt, "text"));
+        utils.log().info("The error text is:" + getAttribute(errorTxt, "text"));
        return getAttribute(errorTxt, "text");
     }
 
