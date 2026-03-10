@@ -38,12 +38,6 @@ public class BaseTest {
 
     TestUtils utils = new TestUtils();;
 
-    //Todas las clases que hereden de BaseTest podran inicializar sus elementos gracias al
-    //AppiumFieldDecorator declarado en esta super clase
-    //public BaseTest(){
-    //   PageFactory.initElements(new AppiumFieldDecorator(driver),this);
-    //}
-
     //Se crean los metodos getter y setter para todos los metodos globales que tienen ThreadSafe
    public AppiumDriver getDriver() {
         return driver.get();
