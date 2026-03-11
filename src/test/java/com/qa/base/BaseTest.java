@@ -34,9 +34,8 @@ public class BaseTest {
     protected static ThreadLocal <HashMap<String, String>> strings = new ThreadLocal <HashMap<String, String>>();
     protected static ThreadLocal <String> dateTime = new ThreadLocal<String>();
     protected static ThreadLocal <String> deviceName =  new ThreadLocal<String>();
-    static Logger log = LogManager.getLogger(BaseTest.class.getName());
 
-    TestUtils utils = new TestUtils();;
+    protected TestUtils utils = new TestUtils();;
 
     //Se crean los metodos getter y setter para todos los metodos globales que tienen ThreadSafe
    public AppiumDriver getDriver() {
@@ -120,13 +119,6 @@ public class BaseTest {
     @BeforeTest
     public void beforeTest(String platformName, String udid, @Optional("androidOnly")String deviceName, @Optional("androidOnly")int systemPort, @Optional("androidOnly")int chromeDriverPort) throws Exception{
 
-       //Este bloque de logs es para verificar que el log4j esta funcionando correctamente, luego se puede eliminar
-
-       log.info("This is info message");
-       log.error("This is error message");
-       log.debug("This is debug message");
-       log.warn("This is warning message");
-
        setDateTime(utils.getDateTime()); //Asignamos la fecha traida desde utils y la colocamos en dateTime de BaseTest
         setDeviceName(deviceName);
         InputStream inputStream = null;
@@ -199,8 +191,6 @@ public class BaseTest {
         e.click();
     }
 
-    // Scroll to element product detail page
-    //No importa si el elemento no
     public WebElement scrollToElementTest(String scrollPage, String contentDescription) {
         WebElement e = null;
         switch (scrollPage) {

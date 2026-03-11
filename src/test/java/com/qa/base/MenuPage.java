@@ -10,7 +10,6 @@ public class MenuPage extends BaseTest{
     @AndroidFindBy(xpath="//android.view.ViewGroup[@content-desc=\"test-Menu\"]/android.view.ViewGroup/android.widget.ImageView") private WebElement settingsBtn;
     @AndroidFindBy (xpath="//android.view.ViewGroup[@content-desc=\"test-Cart\"]/android.view.ViewGroup/android.widget.ImageView") private WebElement cartBtn;
 
-
     public SettingsPage pressSettingbtn(){
         utils.log().info("Pressing settings button");
         click(settingsBtn);

@@ -17,8 +17,6 @@ public class CartPage extends ProductsPage {
     @AndroidFindBy (xpath = "//android.widget.TextView[@text=\"FINISH\"]") private WebElement finishBtn2;
     @AndroidFindBy (xpath = "//android.widget.TextView[@text=\"THANK YOU FOR YOU ORDER\"]") private WebElement successMsg;
 
-
-
     public CartPage(){
         PageFactory.initElements(new AppiumFieldDecorator(getDriver()),this);
     }
