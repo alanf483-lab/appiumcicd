@@ -253,17 +253,6 @@ public class BaseTest {
                 "new UiScrollable(new UiSelector().scrollable(true)).scrollToBeginning(10)"));
     }
 
-//    public void scrollToElement2(WebElement e, String direction){
-//        boolean canScrollMore = (boolean) getDriver().executeScript(
-//                "mobile: scrollGesture", ImmutableMap.of(
-//                        "elementId", ((RemoteWebElement)e).getId(),
-//                        "direction", direction,
-//                        "percent", 1.0,
-//                        "speed", 2500
-//                )
-//        );
-//    } Esto es un cambio
-
     public void sendKeys(WebElement e, String txt){
         waitForVisibility(e);
         e.sendKeys(txt);
