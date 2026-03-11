@@ -22,29 +22,30 @@ public class ProductsPage extends MenuPage {
 
     public String getTitle(){
         String title = getAttribute(productsTitleTxt, "text");
-        utils.log("Product page title is: " + title);
+        utils.log().info("Product page title is: " + title);
         return getAttribute(productsTitleTxt, "text");
     }
 
     public String getSLBTitle(){
         String title = getAttribute(backpackTitleTxt, "text");
-        utils.log("Backpack title is: " + title);
+        utils.log().info("Backpack title is: " + title);
         return getAttribute(backpackTitleTxt, "text");
     }
 
     public String getSLBPrice(){
         String title = getAttribute(backpackPrice, "text");
-        utils.log("Backpack price is: " + title);
+        utils.log().info("Backpack price is: " + title);
         return getAttribute(backpackPrice, "text");
     }
 
     public ProductsDetailPage pressSLBTitle(){
+        utils.log().info("SlB title is clicked");
         click(backpackTitleTxt);
         return new ProductsDetailPage();
     }
 
     public void addBackpackToCart(){
-        utils.log("Backpack is added to cart");
+        utils.log().info("Backpack is added to cart");
         click(addToCartBtn);
     }
 }

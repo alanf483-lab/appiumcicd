@@ -38,12 +38,6 @@ public class BaseTest {
 
     TestUtils utils = new TestUtils();;
 
-    //Todas las clases que hereden de BaseTest podran inicializar sus elementos gracias al
-    //AppiumFieldDecorator declarado en esta super clase
-    //public BaseTest(){
-    //   PageFactory.initElements(new AppiumFieldDecorator(driver),this);
-    //}
-
     //Se crean los metodos getter y setter para todos los metodos globales que tienen ThreadSafe
    public AppiumDriver getDriver() {
         return driver.get();
@@ -225,6 +219,9 @@ public class BaseTest {
         }
         return e;
     }
+
+
+
     // Scroll to element checkout overview page
     public WebElement scrollToElement(String contentDescription) {
         return getDriver().findElement(AppiumBy.androidUIAutomator(
@@ -275,7 +272,7 @@ public class BaseTest {
 //                        "speed", 2500
 //                )
 //        );
-//    }
+//    } Esto es un cambio
 
     public void sendKeys(WebElement e, String txt){
         waitForVisibility(e);

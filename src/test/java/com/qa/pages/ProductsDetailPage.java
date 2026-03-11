@@ -25,42 +25,36 @@ public class ProductsDetailPage extends MenuPage {
 
     public String getSLBTitle(){
         String title = getAttribute(backpackTitleTxt, "text");
-        utils.log("The title is: " + title);
+        utils.log().info("The title is: " + title);
         return getAttribute(backpackTitleTxt, "text");
     }
 
     public String getSLBDetail(){
         String detail = getAttribute(backpackDetailTxt, "text");
-        utils.log("The detail is: " + detail);
+        utils.log().info("The detail is: " + detail);
         return getAttribute(backpackDetailTxt, "text");
     }
 
     public String getSLBPrice(){
         String price = getAttribute(SLBPrice, "text");
-        utils.log("The price is: " + price);
+        utils.log().info("The price is: " + price);
         return getAttribute(SLBPrice, "text");
     }
 
     public String getAddToCartTxt(){
         String btnText = getAttribute(btnAddToCart, "text");
-        utils.log("The btn is: " + btnText);
+        utils.log().info("The btn is: " + btnText);
         return btnText;
     }
 
-//    public ProductsDetailPage scrollToSLBPrice(){
-//        utils.log("Se realiza Scroll");
-//        scrollToElement();
-//        return this;
-//    }
-
-    public ProductsDetailPage scrollToAddToCartBtn(){
-        utils.log("Se realiza scroll nuevo");
-        scrollToElement2(SLBDetailMainPage, "down");
+    public ProductsDetailPage scrollToAddToCart(){
+        utils.log().info("Se realiza Scroll");
+        scrollToElementTest("productDetailPage", "test-ADD TO CART");
         return this;
     }
 
     public ProductsPage pressBackToProductsBtn(){
-        utils.log("Navigate back to products page");
+        utils.log().info("Navigate back to products page");
         click(backToProductsBtn);
         return new ProductsPage();
     }

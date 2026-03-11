@@ -107,7 +107,7 @@ public class ProductsTest extends BaseTest {
         sa.assertEquals(SLBDetail, getStrings().get("product_detail_page_slb_detail"));
 
         //Se realiza scroll
-        productDetailPage.scrollToAddToCartBtn();
+        productDetailPage.scrollToAddToCart();
 
         String btnAddToCart = productDetailPage.getAddToCartTxt();
 
