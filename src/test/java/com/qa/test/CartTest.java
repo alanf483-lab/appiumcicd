@@ -63,6 +63,25 @@ public class CartTest extends BaseTest {
         closeApp();
     }
 
+//    @Test
+//    public void validateBuyingAProducto() throws InterruptedException {
+//        SoftAssert sa = new SoftAssert();
+//
+//        //Se valida el title actual con el title esperado
+//        String SLBTitle = productsPage.getSLBTitle();
+//        sa.assertEquals(SLBTitle, getStrings().get("products_page_slb_title"));
+//
+//        //Se valida el precio actual con el precio esperado
+//        String SLBPriceTxt = productsPage.getSLBPrice();
+//        sa.assertEquals(SLBPriceTxt, getStrings().get("products_page_slb_price"));
+//
+//        //Thread.sleep(1000);
+//        //settingsPage = productsPage.pressSettingbtn();
+//        //loginPage = settingsPage.pressLogoutBtn();
+//
+//        sa.assertAll();
+//    }
+
     @Test
     public void validateBuyingAProduct() throws InterruptedException {
         SoftAssert sa = new SoftAssert();
