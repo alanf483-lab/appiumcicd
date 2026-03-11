@@ -210,15 +210,12 @@ public class BaseTest {
         return e;
     }
 
-
-
     // Scroll to element checkout overview page
     public WebElement scrollToElement(String contentDescription) {
         return getDriver().findElement(AppiumBy.androidUIAutomator(
                 "new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\"))" +
                         ".scrollIntoView(new UiSelector().description(\"" + contentDescription + "\"))"));
     }
-
 
     // Scroll to element by content-description (parametrizado)
     public WebElement scrollToElementByParam(String scrollablePage,String contentDescription) {
