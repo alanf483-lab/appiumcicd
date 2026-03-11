@@ -53,9 +53,7 @@ public class CartTest extends BaseTest {
     public void beforeMethod(Method m){
         launchApp();
         loginPage = new LoginPage();
-        utils.log("\n" + "****** starting test:" + m.getName() + " *******" + "\n");
-
-
+        utils.log().info("\n" + "****** starting test:" + m.getName() + " *******" + "\n");
         productsPage = loginPage.login(loginUsers.getJSONObject("validUser").getString("username"),
                 loginUsers.getJSONObject("validUser").getString("password"));
     }

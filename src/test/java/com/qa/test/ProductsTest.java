@@ -30,7 +30,6 @@ public class ProductsTest extends BaseTest {
 
     TestUtils utils = new TestUtils();
 
-
     @BeforeClass
     public void beforeClass() throws IOException {
         try{
@@ -60,8 +59,7 @@ public class ProductsTest extends BaseTest {
     public void beforeMethod(Method m){
         launchApp();
         loginPage = new LoginPage();
-        utils.log("\n" + "****** starting test:" + m.getName() + " *******" + "\n");
-
+        utils.log().info("\n" + "****** starting test:" + m.getName() + " *******" + "\n");
         productsPage = loginPage.login(loginUsers.getJSONObject("validUser").getString("username"),
                 loginUsers.getJSONObject("validUser").getString("password"));
     }
@@ -114,7 +112,6 @@ public class ProductsTest extends BaseTest {
         //Se valida el precio actual del producto
         String SLBPrice = productDetailPage.getSLBPrice();
         sa.assertEquals(SLBPrice, getStrings().get("product_detail_page_slb_price"));
-
 
         //Se regresa a la pantalla de productos
         productsPage = productDetailPage.pressBackToProductsBtn();

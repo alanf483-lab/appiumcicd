@@ -9,7 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 
 
 public class LoginPage extends BaseTest {
-    TestUtils utils = new TestUtils();
 
     public LoginPage(){
         PageFactory.initElements(new AppiumFieldDecorator(getDriver()),this);
@@ -19,10 +18,6 @@ public class LoginPage extends BaseTest {
     @AndroidFindBy (accessibility = "test-Password") private WebElement passwordTxtFld;
     @AndroidFindBy (accessibility = "test-LOGIN") private WebElement loginBtn;
     @AndroidFindBy (xpath = "//android.widget.TextView[@text=\"Username and password do not match any user in this service.\"]") private WebElement errorTxt;
-    //WebElement usernameTxtFld = driver.findElement(AppiumBy.accessibilityId("test-Username"));
-    //WebElement passwordTxtFld = driver.findElement(AppiumBy.accessibilityId("test-Password"));
-    //WebElement loginBtn = driver.findElement(AppiumBy.accessibilityId("test-LOGIN"));
-    //WebElement errorTxt = driver.findElement(AppiumBy.xpath("//android.widget.TextView[@text=\"Username and password do not match any user in this service.\"]"));
 
     public LoginPage enterUserName(String username){
         utils.log().info("The username is: " + username);
