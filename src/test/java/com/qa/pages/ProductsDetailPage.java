@@ -1,6 +1,8 @@
 package com.qa.pages;
 
+import com.aventstack.extentreports.Status;
 import com.qa.base.MenuPage;
+import com.qa.reports.ExtentReport;
 import com.qa.utils.TestUtils;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
@@ -25,37 +27,35 @@ public class ProductsDetailPage extends MenuPage {
 
     public String getSLBTitle(){
         String title = getAttribute(backpackTitleTxt, "text");
-        utils.log().info("The title is: " + title);
-        return getAttribute(backpackTitleTxt, "text");
+        return getAttribute(backpackTitleTxt, "text" ,"The title is: " + title);
     }
 
     public String getSLBDetail(){
         String detail = getAttribute(backpackDetailTxt, "text");
-        utils.log().info("The detail is: " + detail);
-        return getAttribute(backpackDetailTxt, "text");
+        return getAttribute(backpackDetailTxt, "text", "The detail is: " + detail);
     }
 
     public String getSLBPrice(){
         String price = getAttribute(SLBPrice, "text");
-        utils.log().info("The price is: " + price);
-        return getAttribute(SLBPrice, "text");
+        return getAttribute(SLBPrice, "text", "The price is: " + price);
     }
 
     public String getAddToCartTxt(){
         String btnText = getAttribute(btnAddToCart, "text");
+        ExtentReport.getTest().log(Status.INFO, "The btn is: " + btnText);
         utils.log().info("The btn is: " + btnText);
         return btnText;
     }
 
     public ProductsDetailPage scrollToAddToCart(){
-        utils.log().info("Se realiza Scroll");
+        ExtentReport.getTest().log(Status.INFO, "Scroll to add to cart btn");
+        utils.log().info("Scroll to add to cart btn");
         scrollToElementTest("productDetailPage", "test-ADD TO CART");
         return this;
     }
 
     public ProductsPage pressBackToProductsBtn(){
-        utils.log().info("Navigate back to products page");
-        click(backToProductsBtn);
+        click(backToProductsBtn, "Navigate back to products page");
         return new ProductsPage();
     }
 }

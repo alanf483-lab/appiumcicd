@@ -1,6 +1,10 @@
 package com.qa.pages;
 
+import com.aventstack.extentreports.Status;
+import com.qa.reports.ExtentReport;
+import io.appium.java_client.pagefactory.AndroidBy;
 import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AndroidFindBys;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,53 +25,47 @@ public class CartPage extends ProductsPage {
         PageFactory.initElements(new AppiumFieldDecorator(getDriver()),this);
     }
 
+
     public CartPage pressCheckoutBtn(){
-        utils.log().info("Checkout button is clicked");
-        click(checkoutBtn);
+        click(checkoutBtn, "Checkout button is clicked");
         return this;
     }
 
     public CartPage setFirstName(String firstName){
-        utils.log().info("First name is set to: " + firstName);
-        sendKeys(firstNameBox, firstName);
+        sendKeys(firstNameBox, firstName, "First name is set to: " + firstName);
         return this;
     }
 
     public CartPage setLastName(String lastName){
-        utils.log().info("Last name is set to: " + lastName);
-        sendKeys(lastNameBox, lastName);
+        sendKeys(lastNameBox, lastName, "Last name is set to: " + lastName);
         return this;
     }
 
     public CartPage setPostalCode(String postalCode){
-        utils.log().info("postal code set to: " + postalCode);
-        sendKeys(postalCodeBox, postalCode);
+        sendKeys(postalCodeBox, postalCode, "postal code set to: " + postalCode);
         return this;
     }
 
     public CartPage pressContinueBtn(){
-        utils.log().info("Continue button is clicked");
-        click(continueBtn);
+        click(continueBtn, "Continue button is clicked");
         return this;
     }
 
     public CartPage pressFinishBtn(){
-        utils.log().info("Finish button is clicked");
-        click(finishBtn);
+        click(finishBtn, "Finish button is clicked");
         return this;
     }
 
     public String getFinalMsg(){
         String title = getAttribute(successMsg, "text");
-        utils.log().info("The final msg is: " + title);
-        return getAttribute(successMsg, "text");
+        return getAttribute(successMsg, "text", "The final msg is: " + title);
+
     }
 
     public CartPage scrollToFinish(){
-        utils.log().info("Se realiza scroll");
+        utils.log().info("Scroll to finish btn");
+        ExtentReport.getTest().log(Status.INFO, "Scroll to Finish btn");
         scrollToElementTest("checkoutOverviewPage", "test-FINISH");
         return this;
     }
-
-
 }

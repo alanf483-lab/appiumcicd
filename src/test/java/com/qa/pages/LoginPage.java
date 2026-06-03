@@ -20,20 +20,17 @@ public class LoginPage extends BaseTest {
     @AndroidFindBy (xpath = "//android.widget.TextView[@text=\"Username and password do not match any user in this service.\"]") private WebElement errorTxt;
 
     public LoginPage enterUserName(String username){
-        utils.log().info("The username is: " + username);
-        sendKeys(usernameTxtFld, username);
+        sendKeys(usernameTxtFld, username, "The username is: " + username);
         return this;
     }
 
     public LoginPage enterPassword(String password){
-        utils.log().info("The password is: " + password);
-        sendKeys(passwordTxtFld, password);
+        sendKeys(passwordTxtFld, password, "The password is: " + password);
         return this;
     }
 
     public ProductsPage pressLoginBtn(){
-        utils.log().info("Press login btn");
-        click(loginBtn);
+        click(loginBtn, "Press login btn");
         return new ProductsPage();
     }
 
@@ -45,8 +42,7 @@ public class LoginPage extends BaseTest {
     }
 
     public String getErrorTxt(){
-        utils.log().info("The error text is:" + getAttribute(errorTxt, "text"));
-       return getAttribute(errorTxt, "text");
+       return getAttribute(errorTxt, "text", "The error text is:" + getAttribute(errorTxt, "text"));
     }
 
 }

@@ -1,6 +1,9 @@
 package com.qa.base;
 
+import com.aventstack.extentreports.Status;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.io.ByteStreams;
+import com.qa.reports.ExtentReport;
 import com.qa.utils.TestUtils;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
@@ -8,6 +11,8 @@ import io.appium.java_client.InteractsWithApps;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.screenrecording.CanRecordScreen;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.*;
@@ -26,7 +31,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-
 public class BaseTest {
     //protected static WebDriverWait wait;
     protected static ThreadLocal <AppiumDriver> driver = new ThreadLocal<AppiumDriver>();
@@ -34,6 +38,8 @@ public class BaseTest {
     protected static ThreadLocal <HashMap<String, String>> strings = new ThreadLocal <HashMap<String, String>>();
     protected static ThreadLocal <String> dateTime = new ThreadLocal<String>();
     protected static ThreadLocal <String> deviceName =  new ThreadLocal<String>();
+    protected static ThreadLocal <String> platform = new ThreadLocal<String>();
+    private static AppiumDriverLocalService server;
 
     protected TestUtils utils = new TestUtils();;
 
@@ -77,6 +83,12 @@ public class BaseTest {
         deviceName.set(deviceName_parameter);
     }
 
+    public String getPlatform(){ return platform.get(); }
+
+    public void setPlatform(String platform_parameter){
+       platform.set(platform_parameter);
+   }
+
 
     @BeforeMethod
     public void beforeMethod(){
@@ -115,16 +127,50 @@ public class BaseTest {
         }
     }
 
+    @BeforeSuite
+    public void beforeSuite() throws Exception, Exception{
+        ThreadContext.put("ROUTINGKEY", "ServerLogs");
+        server = getAppiumService();
+        server.start();
+        server.clearOutPutStreams();
+        utils.log().info("Appium Server is started");
+    }
+
+    @AfterSuite
+    public void afterSuite(){
+        server.stop();
+        utils.log().info("Appium Server is stopped");
+    }
+
+    public AppiumDriverLocalService getAppiumService(){
+       return AppiumDriverLocalService.buildService(new AppiumServiceBuilder()
+               .withLogOutput(ByteStreams.nullOutputStream())
+               .withLogFile(new File("ServerLogs/server.log")));
+    }
+
+    public AppiumDriverLocalService getAppiumServerDefault(){
+        return AppiumDriverLocalService.buildDefaultService();
+    }
+
     @Parameters({"platformName", "udid", "deviceName", "systemPort", "chromeDriverPort"})
     @BeforeTest
     public void beforeTest(String platformName, String udid, @Optional("androidOnly")String deviceName, @Optional("androidOnly")int systemPort, @Optional("androidOnly")int chromeDriverPort) throws Exception{
 
-       setDateTime(utils.getDateTime()); //Asignamos la fecha traida desde utils y la colocamos en dateTime de BaseTest
+        setDateTime(utils.getDateTime()); //Asignamos la fecha traida desde utils y la colocamos en dateTime de BaseTest
         setDeviceName(deviceName);
+        setPlatform(platformName);
         InputStream inputStream = null;
         InputStream stringIs = null;
         Properties props = new Properties();
         AppiumDriver driver;
+
+        String strFile = "logs" + File.separator + platformName + "_" + deviceName;
+        File logFile = new File(strFile);
+        if(!logFile.exists()){
+            logFile.mkdirs();
+        }
+        ThreadContext.put("ROUTINGKEY", strFile);
+        
         try{
             props = new Properties(); //revisar si podemos presindir de esta variable
             String propFileName = "config.properties";
@@ -191,6 +237,13 @@ public class BaseTest {
         e.click();
     }
 
+    public void click(WebElement e, String msg){
+        waitForVisibility(e);
+        utils.log().info(msg); // <- Enviamos el log para log4J
+        ExtentReport.getTest().log(Status.INFO,msg); //Enviamos el log para los reportes
+        e.click();
+    }
+
     public WebElement scrollToElementTest(String scrollPage, String contentDescription) {
         WebElement e = null;
         switch (scrollPage) {
@@ -210,15 +263,12 @@ public class BaseTest {
         return e;
     }
 
-
-
     // Scroll to element checkout overview page
     public WebElement scrollToElement(String contentDescription) {
         return getDriver().findElement(AppiumBy.androidUIAutomator(
                 "new UiScrollable(new UiSelector().description(\"test-CHECKOUT: OVERVIEW\"))" +
                         ".scrollIntoView(new UiSelector().description(\"" + contentDescription + "\"))"));
     }
-
 
     // Scroll to element by content-description (parametrizado)
     public WebElement scrollToElementByParam(String scrollablePage,String contentDescription) {
@@ -253,24 +303,27 @@ public class BaseTest {
                 "new UiScrollable(new UiSelector().scrollable(true)).scrollToBeginning(10)"));
     }
 
-//    public void scrollToElement2(WebElement e, String direction){
-//        boolean canScrollMore = (boolean) getDriver().executeScript(
-//                "mobile: scrollGesture", ImmutableMap.of(
-//                        "elementId", ((RemoteWebElement)e).getId(),
-//                        "direction", direction,
-//                        "percent", 1.0,
-//                        "speed", 2500
-//                )
-//        );
-//    } Esto es un cambio
-
     public void sendKeys(WebElement e, String txt){
         waitForVisibility(e);
         e.sendKeys(txt);
     }
 
+    public void sendKeys(WebElement e, String txt, String msg){
+        waitForVisibility(e);
+        utils.log().info(msg);
+        ExtentReport.getTest().log(Status.INFO,msg);
+        e.sendKeys(txt);
+    }
+
     public String getAttribute(WebElement e, String attribute){
         waitForVisibility(e);
+        return e.getAttribute(attribute);
+    }
+
+    public String getAttribute(WebElement e, String attribute, String msg){
+        waitForVisibility(e);
+        utils.log().info(msg);
+        ExtentReport.getTest().log(Status.INFO,msg);
         return e.getAttribute(attribute);
     }
 
