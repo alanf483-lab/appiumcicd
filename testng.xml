@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <suite name="Suite" parallel="tests">
-<!--        <test name="Xiamoi_RedmiNote8">-->
-<!--            <listeners>-->
-<!--                <listener class-name="com.qa.listeners.TestListener"/>-->
-<!--            </listeners>-->
-<!--            <parameter name="platformName" value="Android"/>-->
-<!--            <parameter name="udid" value="jrmftkirzx9h8lyx"/>-->
-<!--            <parameter name="deviceName" value="alan_device"/>-->
-<!--            <parameter name="systemPort" value="10000"/>-->
-<!--            <parameter name="chromeDriverPort" value="11000"/>-->
-<!--            <classes>-->
-<!--                <class name="com.qa.test.LoginTests"></class>-->
-<!--                <class name="com.qa.test.ProductsTest"></class>-->
-<!--                <class name="com.qa.test.CartTest"></class>-->
-<!--            </classes>-->
-<!--        </test>-->
-
-        <test name="Pixel 7">
+        <test name="Xiamoi_RedmiNote8">
             <listeners>
                 <listener class-name="com.qa.listeners.TestListener"/>
             </listeners>
             <parameter name="platformName" value="Android"/>
-            <parameter name="udid" value="emulator-5554"/>
-            <parameter name="deviceName" value="emulatorDevice"/>
-            <parameter name="systemPort" value="10001"/>
-            <parameter name="chromeDriverPort" value="11002"/>
+            <parameter name="udid" value="jrmftkirzx9h8lyx"/>
+            <parameter name="deviceName" value="alan_device"/>
+            <parameter name="systemPort" value="10000"/>
+            <parameter name="chromeDriverPort" value="11000"/>
             <classes>
                 <class name="com.qa.test.LoginTests"></class>
-<!--            <class name="com.qa.test.ProductsTest"></class>-->
+                <class name="com.qa.test.ProductsTest"></class>
                 <class name="com.qa.test.CartTest"></class>
             </classes>
         </test>
+
+<!--        <test name="Pixel 7">-->
+<!--            <listeners>-->
+<!--                <listener class-name="com.qa.listeners.TestListener"/>-->
+<!--            </listeners>-->
+<!--            <parameter name="platformName" value="Android"/>-->
+<!--            <parameter name="udid" value="emulator-5554"/>-->
+<!--            <parameter name="deviceName" value="emulatorDevice"/>-->
+<!--            <parameter name="systemPort" value="10001"/>-->
+<!--            <parameter name="chromeDriverPort" value="11002"/>-->
+<!--            <classes>-->
+<!--                <class name="com.qa.test.LoginTests"></class>-->
+<!--&lt;!&ndash;            <class name="com.qa.test.ProductsTest"></class>&ndash;&gt;-->
+<!--                <class name="com.qa.test.CartTest"></class>-->
+<!--            </classes>-->
+<!--        </test>-->
     </suite>
