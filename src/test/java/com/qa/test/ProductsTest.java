@@ -5,19 +5,19 @@ import com.qa.pages.ProductsDetailPage;
 import com.qa.pages.ProductsPage;
 import com.qa.pages.SettingsPage;
 import com.qa.utils.TestUtils;
-import io.appium.java_client.AppiumBy;
+//import io.appium.java_client.AppiumBy;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+//import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.support.ui.WebDriverWait;
+//import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
-import java.io.StringWriter;
+//import java.io.PrintWriter;
+//import java.io.StringWriter;
 import java.lang.reflect.Method;
 
 public class ProductsTest extends BaseTest {
@@ -107,7 +107,7 @@ public class ProductsTest extends BaseTest {
         //Se realiza scroll
         productDetailPage.scrollToAddToCart();
 
-        String btnAddToCart = productDetailPage.getAddToCartTxt();
+        //String btnAddToCart = productDetailPage.getAddToCartTxt();
 
         //Se valida el precio actual del producto
         String SLBPrice = productDetailPage.getSLBPrice();

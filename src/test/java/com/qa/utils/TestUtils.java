@@ -12,8 +12,8 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.*;
 import java.text.DateFormat;
-import java.text.FieldPosition;
-import java.text.ParsePosition;
+//import java.text.FieldPosition;
+//import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -38,6 +38,7 @@ public class TestUtils {
 
         //Here comes the root node
         Element root = document.getDocumentElement();
+        System.out.println(root);
 
         //Get all elements
         NodeList nList = document.getElementsByTagName("string");
@@ -63,7 +64,7 @@ public class TestUtils {
 
     public void log(String txt) {
         BaseTest base = new BaseTest();
-        String msg = Thread.currentThread().getId() + ":" +base.getDeviceName() + ":" + Thread.currentThread().getStackTrace()[2].getClassName() + ":" + txt;
+        String msg = Thread.currentThread().threadId() + ":" +base.getDeviceName() + ":" + Thread.currentThread().getStackTrace()[2].getClassName() + ":" + txt;
 
         System.out.println(msg);
 
