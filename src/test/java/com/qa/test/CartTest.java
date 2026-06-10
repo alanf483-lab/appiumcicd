@@ -2,19 +2,19 @@ package com.qa.test;
 import com.qa.base.BaseTest;
 import com.qa.pages.*;
 import com.qa.utils.TestUtils;
-import io.appium.java_client.AppiumBy;
+//import io.appium.java_client.AppiumBy;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
+//import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.support.ui.WebDriverWait;
+//import org.testng.Assert;
 import org.testng.annotations.*;
 import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
-import java.io.StringWriter;
+//import java.io.PrintWriter;
+//import java.io.StringWriter;
 import java.lang.reflect.Method;
 
 public class CartTest extends BaseTest {
