@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="08a717a8-e43e-4a15-ac05-e7eabc05c54d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Extent.html" beforeDir="false" afterPath="$PROJECT_DIR$/Extent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" afterPath="$PROJECT_DIR$/testng.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/base/BaseTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +15,7 @@
   </component>
   <component name="CopilotPersistence">
     <persistenceIdMap>
+      <entry key="_/Users/alanflores/Desktop/Git/appiumcicd" value="3EveAH2wm6HHJMJcZUNWSPAApSK" />
       <entry key="_/Users/alanflores/Desktop/TDDFramework/TDDFramework" value="3D3APLwoohRWZemYY9CeXHicSHZ" />
     </persistenceIdMap>
   </component>
@@ -28,20 +28,79 @@
     &quot;assignee&quot;: &quot;alanf483-lab&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/alanf483-lab/TDDFrameworkJavaAutomation.git&quot;,
-    &quot;accountId&quot;: &quot;89cd7aff-8168-4366-be27-3630849b876f&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/alanf483-lab/appiumcicd.git",
+    "accountId": "89cd7aff-8168-4366-be27-3630849b876f"
   }
-}</component>
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 0
-}</component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0000020414136856" />
+      <entry key="S5" value="1.0052962979484705" />
+      <entry key="S10" value="1.0727756686569796" />
+      <entry key="S30" value="1.4175053722415405" />
+      <entry key="S60" value="1.6461465563179458" />
+      <entry key="M2" value="1.8038324180561183" />
+      <entry key="M5" value="1.9163601756699211" />
+      <entry key="M10" value="1.9572670346721028" />
+      <entry key="M15" value="1.9713045032837893" />
+      <entry key="M30" value="1.9855478188722193" />
+      <entry key="H1" value="1.9927476108620055" />
+      <entry key="H2" value="1.9963672068379235" />
+      <entry key="H4" value="1.9981819507674556" />
+      <entry key="D1" value="1.9996967620042954" />
+      <entry key="W1" value="1.9999566746554782" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="3.4484525300354723E-112" />
+      <entry key="MS500" value="5.458040850323003E-23" />
+      <entry key="S2" value="4.048359192415132E-6" />
+      <entry key="S5" value="0.01042197482594746" />
+      <entry key="S10" value="0.14405833881586508" />
+      <entry key="S30" value="0.8317391327765487" />
+      <entry key="S60" value="1.289680103812329" />
+      <entry key="M2" value="1.6060141068706386" />
+      <entry key="M5" value="1.8319606695136255" />
+      <entry key="M10" value="1.914136059950131" />
+      <entry key="M15" value="1.9423395026099057" />
+      <entry key="M30" value="1.970958771028109" />
+      <entry key="H1" value="1.9854262534979705" />
+      <entry key="H2" value="1.9926997950659233" />
+      <entry key="H4" value="1.9963465585077915" />
+      <entry key="D1" value="1.999390628812105" />
+      <entry key="W1" value="1.9999129355964442" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4,
+  "fromUser": true
+}]]></component>
   <component name="ProjectId" id="3D3APLwoohRWZemYY9CeXHicSHZ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -57,7 +116,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "TestNG./Users/alanflores/Desktop/Git/appiumcicd/testng.xml.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "tests",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -118,6 +177,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
