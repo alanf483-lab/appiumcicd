@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08a717a8-e43e-4a15-ac05-e7eabc05c54d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/base/BaseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/base/BaseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/listeners/TestListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/listeners/TestListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/pages/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/pages/CartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/pages/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/pages/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/pages/ProductsDetailPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/pages/ProductsDetailPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/pages/ProductsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/pages/ProductsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/test/CartTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/test/CartTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/test/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/test/LoginTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/test/ProductsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/test/ProductsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/qa/utils/TestUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/qa/utils/TestUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +123,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "TestNG./Users/alanflores/Desktop/Git/appiumcicd/testng.xml.executor": "Run",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Merging main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",

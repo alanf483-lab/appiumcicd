@@ -1,7 +1,7 @@
 package com.qa.pages;
 
 import com.qa.base.BaseTest;
-import com.qa.utils.TestUtils;
+//import com.qa.utils.TestUtils;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
@@ -20,6 +20,9 @@ public class LoginPage extends BaseTest {
     @AndroidFindBy (xpath = "//android.widget.TextView[@text=\"Username and password do not match any user in this service.\"]") private WebElement errorTxt;
 
     public LoginPage enterUserName(String username){
+        /*
+        Este metodo permite ingresar el username que se agrega por parametro
+         */
         sendKeys(usernameTxtFld, username, "The username is: " + username);
         return this;
     }

@@ -1,6 +1,6 @@
 package com.qa.pages;
 
-import com.qa.base.BaseTest;
+//import com.qa.base.BaseTest;
 import com.qa.base.MenuPage;
 import com.qa.utils.TestUtils;
 import io.appium.java_client.pagefactory.AndroidFindBy;

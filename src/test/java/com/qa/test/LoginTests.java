@@ -5,19 +5,19 @@ import com.qa.pages.LoginPage;
 import com.qa.pages.ProductsPage;
 import com.qa.pages.SettingsPage;
 import com.qa.utils.TestUtils;
-import io.appium.java_client.AppiumBy;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+//import io.appium.java_client.AppiumBy;
+//import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.Logger;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-import org.openqa.selenium.WebElement;
+//import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
-import java.io.StringWriter;
+//import java.io.PrintWriter;
+//import java.io.StringWriter;
 import java.lang.reflect.Method;
 
 public class LoginTests extends BaseTest{
