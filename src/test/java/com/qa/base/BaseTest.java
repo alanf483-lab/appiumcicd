@@ -205,7 +205,6 @@ public class BaseTest {
             caps.setAutomationName(props.getProperty("androidAutomationName"));
             caps.setAppPackage(props.getProperty("androidAppPackage"));
             caps.setAppActivity(props.getProperty("androidAppActivity"));
-
             //caps.setAvd(deviceName);
             //String AndroidAppURL = getClass().getResource(props.getProperty("androidAppLocation")).getFile();
             //caps.setApp(appURL);
