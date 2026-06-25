@@ -200,7 +200,6 @@ public class BaseTest {
             caps.setDeviceName(deviceName);
             caps.setSystemPort(systemPort);
             caps.setChromedriverPort(chromeDriverPort);
-            //?caps.set
             //Parametros Globales
             caps.setAutomationName(props.getProperty("androidAutomationName"));
             caps.setAppPackage(props.getProperty("androidAppPackage"));
