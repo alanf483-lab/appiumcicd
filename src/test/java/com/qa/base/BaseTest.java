@@ -143,7 +143,13 @@ public class BaseTest {
     }
 
     public AppiumDriverLocalService getAppiumService(){
+       HashMap<String, String> environment = new HashMap<String, String>();
+       environment.put("PATH", "/User/alanflores/Documentos/apache-maven-3.9.16/bin/bin:/Users/alanflores/Downloads/apache-maven-3.9.15/bin:/Users/alanflores/Library/Java/JavaVirtualMachines/openjdk-24.0.2+12-54/Contents/Home/bin:/Users/alanflores/Library/Android/sdk/tools:/Users/alanflores/Library/Android/sdk/platform-tools:/Users/alanflores/.nvm/versions/node/v24.11.1/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/Library/Frameworks/Python.framework/Versions/3.10/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/pkg/env/global/bin:/Library/Apple/usr/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Users/alanflores/Library/Android/sdk/tools:/Users/alanflores/Library/Android/sdk/tools/bin:/Users/alanflores/Library/Android/sdk/platform-tools");
+       environment.put("ANDROID_HOME", "/Users/alanflores/Library/Android/sdk");
        return AppiumDriverLocalService.buildService(new AppiumServiceBuilder()
+               .usingDriverExecutable(new File("/usr/local/bin/node"))
+               .withAppiumJS(new File("/usr/local/lib/node_modules/appium/build/lib/main.js"))
+               .withEnvironment(environment)
                .withLogOutput(ByteStreams.nullOutputStream())
                .withLogFile(new File("ServerLogs/server.log")));
     }
