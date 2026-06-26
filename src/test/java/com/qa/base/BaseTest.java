@@ -95,7 +95,7 @@ public class BaseTest {
         utils.log("VIDEO STARTS RECORDING");
         ((CanRecordScreen) getDriver()).startRecordingScreen();
     }
- 
+
     @AfterMethod
     public synchronized void afterMethod(ITestResult result){
         utils.log("VIDEO STOPS RECORDING");
@@ -170,7 +170,7 @@ public class BaseTest {
             logFile.mkdirs();
         }
         ThreadContext.put("ROUTINGKEY", strFile);
-        
+
         try{
             props = new Properties(); //revisar si podemos presindir de esta variable
             String propFileName = "config.properties";
