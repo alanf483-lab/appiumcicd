@@ -190,8 +190,9 @@ public class BaseTest {
 
             String appUrl = System.getProperty("user.dir") + File.separator +
                     "src" + File.separator +
+                    "resources" + File.separator +
                     "apps" + File.separator +
-                    "swagLabs.apk";
+                    "Android.SauceLabs.Mobile.Sample.app.2.2.1.apk";
 
             UiAutomator2Options caps = new UiAutomator2Options();
             //Parametros Especificos
