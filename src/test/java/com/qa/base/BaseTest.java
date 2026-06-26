@@ -1,7 +1,7 @@
 package com.qa.base;
 
 import com.aventstack.extentreports.Status;
-import com.google.common.collect.ImmutableMap;
+//import com.google.common.collect.ImmutableMap;
 import com.google.common.io.ByteStreams;
 import com.qa.reports.ExtentReport;
 import com.qa.utils.TestUtils;
@@ -14,10 +14,10 @@ import io.appium.java_client.screenrecording.CanRecordScreen;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.apache.commons.codec.binary.Base64;
-import org.apache.logging.log4j.LogManager;
+//import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.*;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebElement;
+//import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
@@ -95,7 +95,7 @@ public class BaseTest {
         utils.log("VIDEO STARTS RECORDING");
         ((CanRecordScreen) getDriver()).startRecordingScreen();
     }
-
+ 
     @AfterMethod
     public synchronized void afterMethod(ITestResult result){
         utils.log("VIDEO STOPS RECORDING");
@@ -205,7 +205,6 @@ public class BaseTest {
             caps.setAutomationName(props.getProperty("androidAutomationName"));
             caps.setAppPackage(props.getProperty("androidAppPackage"));
             caps.setAppActivity(props.getProperty("androidAppActivity"));
-
             //caps.setAvd(deviceName);
             //String AndroidAppURL = getClass().getResource(props.getProperty("androidAppLocation")).getFile();
             //caps.setApp(appURL);
